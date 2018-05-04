@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyNoActionAppTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:background">@drawable/welcome</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
 </resources>
