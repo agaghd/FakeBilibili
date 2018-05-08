@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.github.agaghd.fakebilibili.SplashActivity">
+    tools:context="io.github.agaghd.fakebilibili.splash.SplashActivity">
 
     <ImageView
         android:id="@+id/welcome_iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent" />
+        android:background="@android:color/transparent"
+        tools:background="@android:color/white" />
+
+    <TextView
+        android:id="@+id/timer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/common_padding_screen"
+        android:background="@color/halfTransBlack"
+        android:padding="6dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/common_textsize_32px"
+        android:visibility="gone"
+        tools:ignore="RtlHardcoded"
+        tools:text="跳过 2s"
+        tools:visibility="visible" />
 
 
-</FrameLayout>
+</RelativeLayout>
