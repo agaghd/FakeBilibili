@@ -2,11 +2,17 @@ package io.github.agaghd.fakebilibili.splash;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
@@ -194,7 +200,14 @@ public class SplashActivity extends BaseActivity {
 
         @Override
         public void onTick(long millisUntilFinished) {
-            timerBtn.setText("跳过 " + millisUntilFinished / 1000 + "s");
+            SpannableStringBuilder ssb = new SpannableStringBuilder();
+            SpannableString spannable = new SpannableString((millisUntilFinished / 1000) + "");
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.bilibiliPink));
+            BackgroundColorSpan backgroundColorSpan = new BackgroundColorSpan(Color.TRANSPARENT);
+            spannable.setSpan(backgroundColorSpan, 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannable.setSpan(foregroundColorSpan, 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            ssb.append("跳过 ").append(spannable);
+            timerBtn.setText(ssb);
         }
     }
 

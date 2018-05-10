@@ -21,10 +21,10 @@
         android:background="@color/halfTransBlack"
         android:padding="6dp"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/common_textsize_32px"
+        android:textSize="@dimen/common_textsize_28px"
         android:visibility="gone"
         tools:ignore="RtlHardcoded"
-        tools:text="跳过 2s"
+        tools:text="跳过 2"
         tools:visibility="visible" />
 
 

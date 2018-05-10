@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="halfTransWhite">#80FFFFFF</color>
     <color name="halfTransBlack">#80000000</color>
+    <color name="bilibiliPink">#FFFF80AB</color>
 </resources>
