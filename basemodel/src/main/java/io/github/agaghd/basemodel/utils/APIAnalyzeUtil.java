@@ -14,6 +14,7 @@ public class APIAnalyzeUtil {
             String[] sourceArray = sourceUrl.split("&");
             if (sourceArray.length>0){
                 for (String s:sourceArray){
+                    sb.append("&");
                     sb.append(s);
                     sb.append("\n");
                 }
