@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="common_padding_screen">16dp</dimen>
+    <dimen name="common_action_bar_height">48dp</dimen>
+    <dimen name="common_drawer_width">320dp</dimen>
     <dimen name="common_textsize_32px">16sp</dimen>
     <dimen name="common_textsize_28px">14sp</dimen>
     <dimen name="common_textsize_24px">12sp</dimen>
