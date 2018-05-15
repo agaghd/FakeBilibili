@@ -19,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/common_padding_screen"
         android:background="@color/halfTransBlack"
-        android:padding="6dp"
+        android:padding="12dp"
         android:textColor="@android:color/white"
         android:textSize="@dimen/common_textsize_28px"
         android:visibility="gone"

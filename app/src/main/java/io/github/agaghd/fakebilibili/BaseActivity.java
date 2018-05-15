@@ -1,9 +1,9 @@
-package io.github.agaghd.basemodel;
+package io.github.agaghd.fakebilibili;
 
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -14,7 +14,7 @@ import io.github.agaghd.basemodel.utils.SharePreferenceUtil;
  * time     :   2018/5/4
  * desc     :   Activity基类
  */
-public class BaseActivity extends FragmentActivity {
+public class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;
     protected SharePreferenceUtil mSharePreferenceUtil;

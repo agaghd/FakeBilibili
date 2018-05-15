@@ -3,8 +3,6 @@ package io.github.agaghd.fakebilibili;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import io.github.agaghd.basemodel.BaseActivity;
-
 public class MainActivity extends BaseActivity {
 
     private long backpressedTime;

@@ -30,8 +30,8 @@ import org.json.JSONObject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.github.agaghd.basemodel.BaseActivity;
 import io.github.agaghd.basemodel.utils.SharePreferenceUtil;
+import io.github.agaghd.fakebilibili.BaseActivity;
 import io.github.agaghd.fakebilibili.FakeBilibiliApplication;
 import io.github.agaghd.fakebilibili.MainActivity;
 import io.github.agaghd.fakebilibili.R;
@@ -132,9 +132,10 @@ public class SplashActivity extends BaseActivity {
                             JSONObject result = new JSONObject(body.string());
                             JSONArray data = result.optJSONArray("data");
                             if (data != null && data.length() > 0) {
+                                boolean isAD = data.length() > 1;
                                 JSONObject cmJSON = data.getJSONObject(0);
                                 JSONObject splashJSON = data.getJSONObject(data.length() - 1);
-                                final String splashCM = cmJSON.optString("thumb", "");
+                                final String splashCM = isAD ? cmJSON.optString("thumb", "") : "";
                                 final String defaultSplash = splashJSON.optString("thumb", "");
                                 String cmUrl = cmJSON.optString("uri", "");
                                 SharePreferenceUtil sharePreferenceUtil = new SharePreferenceUtil(FakeBilibiliApplication.getAppContext());
