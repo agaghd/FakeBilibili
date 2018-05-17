@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="io.github.agaghd.fakebilibili.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
@@ -56,9 +57,9 @@
 
         <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
-            android:background="@color/halfTransBlack"
             android:layout_height="@dimen/common_action_bar_height"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:background="@color/halfTransBlack">
 
         </android.support.design.widget.TabLayout>
 
