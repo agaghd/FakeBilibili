@@ -63,11 +63,11 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     private boolean onBiliDrawerbgLoginTouch(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP: {
-                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_not_logined);
+                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_logined);
                 break;
             }
             default: {
-                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_logined);
+                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_not_logined);
                 break;
             }
         }
