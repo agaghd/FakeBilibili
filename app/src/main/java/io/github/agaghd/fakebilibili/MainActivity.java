@@ -1,9 +1,18 @@
 package io.github.agaghd.fakebilibili;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends BaseActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class MainActivity extends BaseActivity implements View.OnTouchListener {
+
+    @Bind(R.id.bili_drawerbg_login)
+    ImageView biliDrawerbgLogin;
 
     private long backpressedTime;
 
@@ -11,7 +20,13 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        setUpListeners();
         dataInit();
+    }
+
+    private void setUpListeners() {
+        biliDrawerbgLogin.setOnTouchListener(this);
     }
 
     private void dataInit() {
@@ -29,5 +44,33 @@ public class MainActivity extends BaseActivity {
             Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
             backpressedTime = currentTime;
         }
+    }
+
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (v.getId()) {
+            case R.id.bili_drawerbg_login: {
+                return onBiliDrawerbgLoginTouch(event);
+            }
+            default: {
+                break;
+            }
+        }
+        return false;
+    }
+
+    private boolean onBiliDrawerbgLoginTouch(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_UP: {
+                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_not_logined);
+                break;
+            }
+            default: {
+                biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_logined);
+                break;
+            }
+        }
+        return true;
     }
 }
