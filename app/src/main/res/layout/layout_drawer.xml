@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/common_drawer_width"
     android:layout_height="match_parent"
     android:layout_gravity="start"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
 
-    <android.support.design.widget.CoordinatorLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="144dp"
+        android:layout_height="160dp"
         android:background="@color/bilibiliPink">
 
-    </android.support.design.widget.CoordinatorLayout>
+        <ImageView
+            android:id="@+id/bili_drawerbg_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/bili_drawerbg_logined" />
+
+    </RelativeLayout>
 
 </LinearLayout>
