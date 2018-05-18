@@ -4,25 +4,31 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.github.agaghd.fakebilibili.mainpage.MainFragment;
 import io.github.agaghd.fakebilibili.utils.Constants;
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
     @Bind(R.id.bili_drawerbg_login)
     ImageView biliDrawerbgLogin;
+    @Bind(R.id.main_fl)
+    FrameLayout mainFl;
 
     private long backpressedTime;
     private Point touchDownPoint;
+    private MainFragment mainFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setColor(this, getResources().getColor(R.color.bilibiliPink));
         ButterKnife.bind(this);
         setUpListeners();
         dataInit();
@@ -34,6 +40,9 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
     private void dataInit() {
         backpressedTime = 0;
+        //// TODO: 2018/5/18 测试碎片事务
+        mainFragment = new MainFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_fl, mainFragment).commit();
     }
 
     @Override
