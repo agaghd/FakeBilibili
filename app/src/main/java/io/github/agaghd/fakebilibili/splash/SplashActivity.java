@@ -15,6 +15,7 @@ import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,6 +75,7 @@ public class SplashActivity extends BaseActivity {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         Constants.DISPLAY_WIDTH = displayMetrics.widthPixels;
         Constants.DISPLAY_HEIGHT = displayMetrics.heightPixels;
+        Constants.TOUCH_SLOP = ViewConfiguration.get(mContext).getScaledTouchSlop();
         String splashDefault = mSharePreferenceUtil.getString(NAME_SPLASH_DEFAULT);
         cmUrl = mSharePreferenceUtil.getString(NAME_CM_URL);
         final TimeCountSplash timeCountSplash = new TimeCountSplash(4000, 1000);

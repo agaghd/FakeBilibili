@@ -9,4 +9,5 @@ package io.github.agaghd.fakebilibili.utils;
 public class Constants {
     public static int DISPLAY_WIDTH = 0;
     public static int DISPLAY_HEIGHT = 0;
+    public static int TOUCH_SLOP = 0;
 }

@@ -1,5 +1,6 @@
 package io.github.agaghd.fakebilibili;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.github.agaghd.fakebilibili.utils.Constants;
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
@@ -15,6 +17,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     ImageView biliDrawerbgLogin;
 
     private long backpressedTime;
+    private Point touchDownPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +65,20 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
 
     private boolean onBiliDrawerbgLoginTouch(MotionEvent event) {
         switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:{
+            case MotionEvent.ACTION_DOWN: {
+                touchDownPoint = new Point((int) event.getX(), (int) event.getY());
                 biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_not_logined);
+                break;
+            }
+            case MotionEvent.ACTION_MOVE: {
+                if (touchDownPoint != null) {
+                    Point movePoint = new Point((int) event.getX(), (int) event.getY());
+                    int dx = movePoint.x - touchDownPoint.x;
+                    int dy = movePoint.y - touchDownPoint.y;
+                    if ((dx * dx + dy * dy) > (Constants.TOUCH_SLOP)) {
+                        biliDrawerbgLogin.setImageResource(R.drawable.bili_drawerbg_logined);
+                    }
+                }
                 break;
             }
             default: {
