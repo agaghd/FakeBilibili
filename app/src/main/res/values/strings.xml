@@ -2,6 +2,23 @@
     <string name="app_name">FakeBilibili</string>
     <string name="press_back_twice_to_exit">再按一次退出</string>
 
+    <!--首页抽屉-->
+    <string name="drawer_item_main">首页</string>
+    <string name="drawer_item_history">历史记录</string>
+    <string name="drawer_item_offline">离线缓存</string>
+    <string name="drawer_item_my_collection">我的收藏</string>
+    <string name="drawer_item_my_attention">我的关注</string>
+    <string name="drawer_item_see_you_later">稍后再看</string>
+
+    <string name="drawer_item_creation_center">创作中心</string>
+
+    <string name="drawer_item_live_center">直播中心</string>
+    <string name="drawer_item_my_vip">我的大会员</string>
+    <string name="drawer_item_no_flow_service">免流量服务</string>
+    <string name="drawer_item_shopping_center">会员购中心</string>
+    <string name="drawer_item_i_want_see_bishi">联系客服</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
