@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/item_layout_style"
+    tools:ignore="UseCompoundDrawables">
+
+    <ImageView
+        android:id="@+id/iv"
+        style="@style/item_icon_style"
+        tools:src="@drawable/ic_upper_main_1"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv"
+        style="@style/item_textview_style"
+        tools:text="首页" />
+</LinearLayout>

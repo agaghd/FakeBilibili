@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--首页抽屉item的样式-->
+    <style name="item_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">@dimen/common_item_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--抽屉item 图片的样式-->
+    <style name="item_icon_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">@dimen/common_padding_screen</item>
+        <item name="android:layout_marginEnd">@dimen/common_padding_screen</item>
+    </style>
+
+    <!--抽屉item文字样式-->
+    <style name="item_textview_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/common_textsize_28px</item>
+        <item name="android:textColor">@color/commonTextColor</item>
+    </style>
+
 </resources>

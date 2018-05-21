@@ -5,5 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="halfTransWhite">#80FFFFFF</color>
     <color name="halfTransBlack">#80000000</color>
-    <color name="bilibiliPink">#FFFF80AB</color>
+    <color name="mainThemeColor">#FFFF80AB</color>
+    <color name="backGroundColor">#FFEEEEEE</color>
+    <color name="selectedItemColor">#FFCCCCCC</color>
+
+    <!--文字颜色-->
+    <color name="commonTextColor">#666666</color>
+    <color name="commonTextColorDark">#333333</color>
+    <color name="commonTextColorLignt">#999999</color>
 </resources>

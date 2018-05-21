@@ -16,7 +16,7 @@
 
             <android.support.v7.widget.Toolbar
                 app:layout_scrollFlags="scroll|enterAlways"
-                android:background="@color/bilibiliPink"
+                android:background="@color/mainThemeColor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

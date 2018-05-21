@@ -3,23 +3,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/common_drawer_width"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="start"
+    android:background="@color/backGroundColor"
     android:orientation="vertical"
     tools:ignore="ContentDescription">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@color/bilibiliPink">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
 
-        <ImageView
-            android:id="@+id/bili_drawerbg_login"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/bili_drawerbg_logined" />
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@color/mainThemeColor"
+                android:paddingTop="@dimen/common_padding_screen">
+
+                <ImageView
+                    android:id="@+id/portraint_iv"
+                    android:layout_width="@dimen/common_portraint_size"
+                    android:layout_height="@dimen/common_portraint_size"
+                    android:layout_marginStart="@dimen/common_padding_screen"
+                    android:layout_marginTop="@dimen/common_padding_screen"
+                    android:src="@drawable/music_portrait_placeholder"
+                    tools:src="@drawable/bangumi_sponsor_result_ic_portrait_33" />
+
+                <ImageView
+                    android:id="@+id/bili_drawerbg_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/bili_drawerbg_logined" />
+
+                <TextView
+                    android:id="@+id/user_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/portraint_iv"
+                    android:layout_marginStart="@dimen/common_padding_screen"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@android:color/white"
+                    tools:text="CoverStroy" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_name_tv"
+                    android:layout_marginStart="@dimen/common_padding_screen"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/backGroundColor"
+                    android:textSize="@dimen/common_textsize_24px"
+                    tools:text="B币:5.0 硬币:111" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <io.github.agaghd.fakebilibili.customview.DrawerItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:selectedDrawable="@mipmap/ic_launcher"
+                    app:unSelectedDrawable="@drawable/arrow_left"
+                    app:selectedTextColor="@color/mainThemeColor"
+                    app:unSelectedTextColor="@color/commonTextColor">
+
+                </io.github.agaghd.fakebilibili.customview.DrawerItemView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_action_bar_height"
+        android:orientation="horizontal">
+
+    </LinearLayout>
 
 </LinearLayout>

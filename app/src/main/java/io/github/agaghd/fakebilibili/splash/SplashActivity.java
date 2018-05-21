@@ -205,7 +205,7 @@ public class SplashActivity extends BaseActivity {
         public void onTick(long millisUntilFinished) {
             SpannableStringBuilder ssb = new SpannableStringBuilder();
             SpannableString spannable = new SpannableString((millisUntilFinished / 1000) + "");
-            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.bilibiliPink));
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.mainThemeColor));
             BackgroundColorSpan backgroundColorSpan = new BackgroundColorSpan(Color.TRANSPARENT);
             spannable.setSpan(backgroundColorSpan, 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             spannable.setSpan(foregroundColorSpan, 0, spannable.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

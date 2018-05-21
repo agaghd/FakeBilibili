@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setColor(this, getResources().getColor(R.color.bilibiliPink));
+        setColor(this, getResources().getColor(R.color.mainThemeColor));
         ButterKnife.bind(this);
         setUpListeners();
         dataInit();

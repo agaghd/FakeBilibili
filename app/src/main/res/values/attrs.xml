@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义抽屉栏的信息-->
+    <declare-styleable name="DrawerItemView">
+        <attr name="selectedDrawable" format="reference|integer"/>
+        <attr name="unSelectedDrawable" format="reference|integer"/>
+        <attr name="selectedTextColor" format="color"/>
+        <attr name="unSelectedTextColor" format="color"/>
+    </declare-styleable>
+</resources>
