@@ -2,6 +2,7 @@
 <resources>
     <dimen name="common_padding_screen">16dp</dimen>
     <dimen name="common_action_bar_height">48dp</dimen>
+    <dimen name="common_tab_height">40dp</dimen>
     <dimen name="common_item_height">48dp</dimen>
     <dimen name="common_portraint_size">64dp</dimen>
     <dimen name="common_drawer_width">280dp</dimen>

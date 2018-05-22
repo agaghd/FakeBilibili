@@ -8,6 +8,7 @@
     <color name="mainThemeColor">#FFFF80AB</color>
     <color name="backGroundColor">#FFEEEEEE</color>
     <color name="selectedItemColor">#FFCCCCCC</color>
+    <color name="dividerColor">#FFCCCCCC</color>
 
     <!--文字颜色-->
     <color name="commonTextColor">#666666</color>
