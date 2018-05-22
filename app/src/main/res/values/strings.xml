@@ -19,6 +19,12 @@
     <string name="drawer_item_i_want_see_bishi">联系客服</string>
 
 
+    <!--主页碎片-->
+    <string name="main_fragment_tab_live">直播</string>
+    <string name="main_fragment_tab_haokangde">推荐</string>
+    <string name="main_fragment_tab_bangumi">追番</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
