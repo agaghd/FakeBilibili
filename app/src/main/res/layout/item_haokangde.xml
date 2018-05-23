@@ -22,8 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_card_img_height"
             android:src="@drawable/ic_load_data"
-            tools:background="@android:color/black"
-            tools:src="@drawable/ic_load_data" />
+            tools:background="@android:color/white" />
 
         <TextView
             android:id="@+id/play_times_tv"
@@ -73,7 +72,7 @@
             tools:text="08:25" />
 
         <TextView
-            android:id="@+id/card_desc_tv"
+            android:id="@+id/card_title_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/card_iv"
@@ -88,6 +87,39 @@
             tools:text="震惊：小五居然把妹妹给......" />
 
         <TextView
+            android:id="@+id/card_ad_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_margin="7dp"
+            android:background="@drawable/stoke_rect_round_grey"
+            android:paddingBottom="1dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="1dp"
+            android:text="@string/ad"
+            android:textColor="@color/commonTextColorLignt"
+            android:textSize="@dimen/common_textsize_24px"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/card_desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/card_ad_tv"
+            android:paddingBottom="@dimen/common_padding_top"
+            android:paddingTop="@dimen/common_padding_top"
+            android:textColor="@color/commonTextColorLignt"
+            android:textSize="@dimen/common_textsize_24px"
+            android:visibility="invisible"
+            tools:text="只要998，纸片人老婆带回家"
+            tools:visibility="visible" />
+
+
+        <TextView
             android:id="@+id/card_tag_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +131,8 @@
             android:paddingTop="@dimen/common_padding_top"
             android:textColor="@color/commonTextColorLignt"
             android:textSize="@dimen/common_textsize_24px"
-            tools:text="东方·MMD" />
+            tools:text="东方·MMD"
+            tools:visibility="invisible" />
 
         <ImageView
             android:id="@+id/more_iv"

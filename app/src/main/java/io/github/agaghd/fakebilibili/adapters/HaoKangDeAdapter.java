@@ -41,7 +41,7 @@ public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
             MyViewHolder holder = (MyViewHolder) viewHolder;
             if (data != null) {
                 String title = data.optString("title", "");
-                holder.cardDescTv.setText(title);
+                holder.cardTitleTv.setText(title);
                 String cover = data.optString("cover", "");
                 Glide.with(mContext).load(cover).centerCrop().into(holder.cardIv);
                 String play = data.optString("play", "");
@@ -64,10 +64,16 @@ public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
                 holder.lengthTv.setText(StringFormatUtil.getHMSTimeString(duration));
                 String tname = data.optString("tname");
                 holder.cardTagTv.setText(tname);
+                String desc = data.optString("desc");
+                holder.cardDescTv.setText(desc);
                 if (TextUtils.isEmpty(tname)) {
                     holder.lengthTv.setVisibility(View.INVISIBLE);
+                    holder.cardAdTv.setVisibility(View.VISIBLE);
+                    holder.cardDescTv.setVisibility(View.VISIBLE);
                 } else {
                     holder.lengthTv.setVisibility(View.VISIBLE);
+                    holder.cardAdTv.setVisibility(View.INVISIBLE);
+                    holder.cardDescTv.setVisibility(View.INVISIBLE);
                 }
             }
         }
@@ -83,10 +89,14 @@ public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
         TextView commentsTv;
         @Bind(R.id.length_tv)
         TextView lengthTv;
-        @Bind(R.id.card_desc_tv)
-        TextView cardDescTv;
+        @Bind(R.id.card_title_tv)
+        TextView cardTitleTv;
         @Bind(R.id.card_tag_tv)
         TextView cardTagTv;
+        @Bind(R.id.card_ad_tv)
+        TextView cardAdTv;
+        @Bind(R.id.card_desc_tv)
+        TextView cardDescTv;
         @Bind(R.id.more_iv)
         ImageView moreIv;
 
