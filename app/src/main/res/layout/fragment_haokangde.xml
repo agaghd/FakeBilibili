@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:faker="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_padding_screen"
+        android:gravity="center_vertical"
+        android:textColor="@color/commonTextColor"
+        android:textSize="@dimen/common_textsize_28px"
+        faker:layout_constraintStart_toStartOf="parent"
+        faker:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        android:text="@string/comprehensive" />
+
+    <TextView
+        android:id="@+id/ranking_list_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="@dimen/common_padding_screen"
+        android:gravity="center_vertical"
+        android:textColor="@color/commonTextColor"
+        android:textSize="@dimen/common_textsize_28px"
+        faker:layout_constraintRight_toLeftOf="@+id/haokangde_tag_tv"
+        faker:layout_constraintTop_toTopOf="parent"
+        android:text="@string/rank" />
+
+    <TextView
+        android:id="@+id/haokangde_tag_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="@dimen/common_padding_screen"
+        android:gravity="center"
+        android:textColor="@color/commonTextColor"
+        android:textSize="@dimen/common_textsize_28px"
+        faker:layout_constraintRight_toRightOf="parent"
+        faker:layout_constraintTop_toTopOf="parent"
+        android:text="@string/tag" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/haokangde_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        faker:layout_constraintBottom_toBottomOf="parent"
+        faker:layout_constraintLeft_toLeftOf="parent"
+        faker:layout_constraintRight_toRightOf="parent"
+        faker:layout_constraintTop_toBottomOf="@id/haokangde_tag_tv"
+        android:layout_marginStart="@dimen/common_padding_screen_half"
+        android:layout_marginEnd="@dimen/common_padding_screen_half"
+        tools:layoutManager="GirdLayoutManager"
+        tools:listitem="@layout/item_haokangde"
+        tools:orientation="vertical"
+        tools:spanCount="2" />
+
+</android.support.constraint.ConstraintLayout>
