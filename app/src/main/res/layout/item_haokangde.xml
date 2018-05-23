@@ -7,8 +7,8 @@
     android:layout_marginEnd="@dimen/common_padding_screen_half"
     android:layout_marginStart="@dimen/common_padding_screen_half"
     android:layout_marginTop="@dimen/common_padding_top"
-    app:cardBackgroundColor="@android:color/white"
     android:orientation="vertical"
+    app:cardBackgroundColor="@android:color/white"
     app:cardCornerRadius="@dimen/common_card_radius"
     app:cardPreventCornerOverlap="true"
     tools:ignore="RelativeOverlap,ContentDescription">
@@ -21,8 +21,9 @@
             android:id="@+id/card_iv"
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_card_img_height"
-            android:background="@android:color/black"
-            android:src="@drawable/bangumi_follow_home_ic_index_bangumi2" />
+            android:src="@drawable/ic_load_data"
+            tools:background="@android:color/black"
+            tools:src="@drawable/ic_load_data" />
 
         <TextView
             android:id="@+id/play_times_tv"
@@ -35,7 +36,7 @@
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/common_textsize_24px"
-            android:text="23.5W" />
+            tools:text="23.5W" />
 
         <TextView
             android:id="@+id/comments_tv"
@@ -46,7 +47,7 @@
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/common_textsize_24px"
-            android:text="181.5W" />
+            tools:text="181.5W" />
 
         <TextView
             android:id="@+id/length_tv"
@@ -60,22 +61,22 @@
             android:singleLine="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/common_textsize_24px"
-            android:text="08:25" />
+            tools:text="08:25" />
 
         <TextView
             android:id="@+id/card_desc_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/card_iv"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="@dimen/common_padding_screen"
+            android:layout_marginEnd="@dimen/common_padding_screen_half"
+            android:layout_marginStart="@dimen/common_padding_screen_half"
             android:layout_marginTop="@dimen/common_padding_top"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/commonTextColor"
             android:textSize="@dimen/common_textsize_28px"
             tools:ignore="RelativeOverlap"
-            android:text="震惊：小五居然把妹妹给......" />
+            tools:text="震惊：小五居然把妹妹给......" />
 
         <TextView
             android:id="@+id/card_tag_tv"
@@ -84,12 +85,12 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:paddingBottom="@dimen/common_padding_top"
-            android:paddingEnd="@dimen/common_padding_screen"
-            android:paddingStart="@dimen/common_padding_screen"
+            android:paddingEnd="@dimen/common_padding_screen_half"
+            android:paddingStart="@dimen/common_padding_screen_half"
             android:paddingTop="@dimen/common_padding_top"
             android:textColor="@color/commonTextColorLignt"
-            android:textSize="@dimen/common_textsize_28px"
-            android:text="东方·MMD" />
+            android:textSize="@dimen/common_textsize_24px"
+            tools:text="东方·MMD" />
 
         <ImageView
             android:id="@+id/more_iv"
@@ -98,8 +99,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:paddingBottom="@dimen/common_padding_top"
-            android:paddingEnd="@dimen/common_padding_screen"
-            android:paddingStart="@dimen/common_padding_screen"
+            android:paddingEnd="@dimen/common_padding_screen_half"
+            android:paddingStart="@dimen/common_padding_screen_half"
             android:paddingTop="@dimen/common_padding_top"
             android:src="@drawable/ic_more_gray" />
 
