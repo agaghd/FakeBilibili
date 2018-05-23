@@ -11,6 +11,7 @@
     <dimen name="common_card_height">180dp</dimen>
     <dimen name="common_card_img_height">108dp</dimen>
     <dimen name="common_drawer_width">280dp</dimen>
+
     <dimen name="common_textsize_32px">16sp</dimen>
     <dimen name="common_textsize_28px">14sp</dimen>
     <dimen name="common_textsize_24px">12sp</dimen>
