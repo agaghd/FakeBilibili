@@ -24,6 +24,11 @@
     <string name="main_fragment_tab_haokangde">推荐</string>
     <string name="main_fragment_tab_bangumi">追番</string>
 
+    <!--好康的-->
+    <string name="comprehensive">综合</string>
+    <string name="rank">排名</string>
+    <string name="tag">标签</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
