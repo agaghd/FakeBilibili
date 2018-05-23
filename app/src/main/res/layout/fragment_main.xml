@@ -54,7 +54,6 @@
             android:layout_gravity="center_horizontal"
             android:background="@android:color/transparent"
             app:tabIndicatorColor="@color/mainThemeColor"
-            app:tabIndicatorHeight="3dp"
             app:tabPaddingEnd="@dimen/common_padding_screen"
             app:tabPaddingStart="@dimen/common_padding_screen"
             app:tabSelectedTextColor="@color/mainThemeColor"
