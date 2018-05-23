@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -45,6 +46,8 @@ public class HaoKangDeFragment extends Fragment {
     TextView haokangdeTagTv;
     @Bind(R.id.haokangde_rv)
     RecyclerView haokangdeRv;
+    @Bind(R.id.haokangde_swipe)
+    SwipeRefreshLayout haokangdeSwipe;
 
     HaoKangDeAdapter haoKangDeAdapter;
 
@@ -53,29 +56,58 @@ public class HaoKangDeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_haokangde, container, false);
         ButterKnife.bind(this, view);
+        setUpListeners();
         initData();
         return view;
     }
 
+    private void setUpListeners() {
+        haokangdeSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData(true);
+            }
+        });
+    }
+
     private void initData() {
+        haokangdeSwipe.setColorSchemeResources(R.color.mainThemeColor);
         List<JSONObject> datas = new ArrayList<>();
-        JSONObject jsonObject = new JSONObject();
-        JSONObject jsonObject2 = new JSONObject();
-        datas.add(jsonObject);
-        datas.add(jsonObject2);
         haoKangDeAdapter = new HaoKangDeAdapter();
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        final GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         haokangdeRv.setLayoutManager(layoutManager);
         haokangdeRv.setItemAnimator(new DefaultItemAnimator());
         haokangdeRv.setAdapter(haoKangDeAdapter);
         haoKangDeAdapter.setDatas(datas);
         loadData(true);
+        haokangdeRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            private int lastVisiblePosition;
+
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    if (lastVisiblePosition == haoKangDeAdapter.getInnerItemCount() - 2) {
+                        Toast.makeText(getActivity(), "load", Toast.LENGTH_SHORT).show();
+                        loadData(false);
+                    }
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                lastVisiblePosition = layoutManager.findLastVisibleItemPosition() - 1;
+            }
+        });
     }
 
     private void loadData(final boolean isRefresh) {
         HaoKangDeImpl.getHaoKangDe(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+                haokangdeSwipe.setRefreshing(false);
                 ResponseBody responseBody = response.body();
                 if (responseBody == null) {
                     return;
@@ -113,6 +145,7 @@ public class HaoKangDeFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                haokangdeSwipe.setRefreshing(false);
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }, isRefresh);
