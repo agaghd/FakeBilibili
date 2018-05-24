@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.agaghd.fakebilibili.R;
 import io.github.agaghd.fakebilibili.adapters.HaoKangDeAdapter;
+import io.github.agaghd.fakebilibili.customview.BannerView;
 import io.github.agaghd.fakebilibili.network.apimpl.HaoKangDeImpl;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -125,6 +127,15 @@ public class HaoKangDeFragment extends Fragment {
                     if (isRefresh) {
                         // TODO: 2018/5/23 设置banner数据
                         JSONObject bannerJson = data.optJSONObject(0);
+                        if (bannerJson != null) {
+                            JSONArray banner_item = bannerJson.optJSONArray("banner_item");
+                            BannerView bannerView = new BannerView(getActivity());
+                            int height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 108, getResources().getDisplayMetrics());
+                            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height);
+                            bannerView.setLayoutParams(layoutParams);
+                            haoKangDeAdapter.setHeaderView(bannerView);
+                            bannerView.setData(banner_item);
+                        }
                     }
                     int startIndex = isRefresh ? 1 : 0;
                     if (data.length() < startIndex) {

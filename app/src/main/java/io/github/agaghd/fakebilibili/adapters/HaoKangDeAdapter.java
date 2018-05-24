@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -22,7 +23,7 @@ import io.github.agaghd.fakebilibili.R;
 /**
  * author : wjy
  * time   : 2018/05/23
- * desc   :
+ * desc   : 推荐页面RecyclerView的适配器
  */
 
 public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
@@ -38,7 +39,7 @@ public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
     @Override
     public void onBind(RecyclerView.ViewHolder viewHolder, int RealPosition, JSONObject data) {
         if (viewHolder instanceof MyViewHolder) {
-            MyViewHolder holder = (MyViewHolder) viewHolder;
+            final MyViewHolder holder = (MyViewHolder) viewHolder;
             if (data != null) {
                 String title = data.optString("title", "");
                 holder.cardTitleTv.setText(title);
@@ -76,7 +77,36 @@ public class HaoKangDeAdapter extends BaseRecyclerAdapter<JSONObject> {
                     holder.cardDescTv.setVisibility(View.INVISIBLE);
                 }
             }
+            holder.moreIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showIndifferentPopWindow(holder.moreIv);
+                }
+            });
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    showIndifferentPopWindow(holder.moreIv);
+                    return true;
+                }
+            });
+            holder.cardTagTv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    gotoTagActivity();
+                }
+            });
         }
+    }
+
+    private void showIndifferentPopWindow(View view) {
+        // TODO: 2018/5/24 显示屏蔽内容窗口
+        Toast.makeText(mContext, "显示屏蔽内容窗口", Toast.LENGTH_SHORT).show();
+    }
+
+    private void gotoTagActivity() {
+        // TODO: 2018/5/24 前往Tag页面
+        Toast.makeText(mContext, "前往Tag页面", Toast.LENGTH_SHORT).show();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:faker="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/common_padding_screen_half"
+        faker:cardCornerRadius="@dimen/common_card_radius">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/banner_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="@color/halfTransBlack">
+
+        </android.support.v4.view.ViewPager>
+
+        <TextView
+            android:id="@+id/banner_ad_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/common_padding_screen"
+            android:layout_marginStart="@dimen/common_padding_screen"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/common_textsize_24px"
+            tools:text="广告" />
+
+        <LinearLayout
+            android:id="@+id/banner_point_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="@dimen/common_padding_screen_half"
+            android:layout_marginStart="@dimen/common_padding_screen_half"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>
