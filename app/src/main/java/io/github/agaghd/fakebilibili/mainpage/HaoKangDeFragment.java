@@ -90,7 +90,7 @@ public class HaoKangDeFragment extends Fragment {
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (lastVisiblePosition == haoKangDeAdapter.getInnerItemCount() - 2) {
+                    if (lastVisiblePosition == haoKangDeAdapter.getItemCount() - 2) {
                         loadData(false);
                     }
                 }
