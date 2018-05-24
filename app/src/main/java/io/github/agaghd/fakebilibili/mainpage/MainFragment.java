@@ -44,6 +44,7 @@ public class MainFragment extends Fragment {
     }
 
     private void initData() {
+        mainViewPager.setOffscreenPageLimit(5);
         fragmentList = new ArrayList<>();
         Fragment haoKangDeFragment1 = new HaoKangDeFragment();
         Fragment haoKangDeFragment2 = new HaoKangDeFragment();

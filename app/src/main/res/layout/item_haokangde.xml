@@ -81,7 +81,7 @@
             android:layout_marginTop="@dimen/common_padding_top"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textColor="@color/commonTextColor"
+            android:textColor="@color/commonTextColorDark"
             android:textSize="@dimen/common_textsize_28px"
             tools:ignore="RelativeOverlap"
             tools:text="震惊：小五居然把妹妹给......" />

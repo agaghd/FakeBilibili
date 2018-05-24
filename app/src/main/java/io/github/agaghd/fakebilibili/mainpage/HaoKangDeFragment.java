@@ -89,7 +89,6 @@ public class HaoKangDeFragment extends Fragment {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     if (lastVisiblePosition == haoKangDeAdapter.getInnerItemCount() - 2) {
-                        Toast.makeText(getActivity(), "load", Toast.LENGTH_SHORT).show();
                         loadData(false);
                     }
                 }
@@ -104,6 +103,11 @@ public class HaoKangDeFragment extends Fragment {
     }
 
     private void loadData(final boolean isRefresh) {
+        if (haokangdeSwipe.isRefreshing()) {
+            return;
+        }
+        Toast.makeText(getActivity(), "load", Toast.LENGTH_SHORT).show();
+        haokangdeSwipe.setRefreshing(true);
         HaoKangDeImpl.getHaoKangDe(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
