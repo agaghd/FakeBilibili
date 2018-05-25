@@ -1,4 +1,4 @@
-package io.github.agaghd.fakebilibili.mainpage;
+package io.github.agaghd.fakebilibili.homepage;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,7 +24,7 @@ import io.github.agaghd.fakebilibili.adapters.MyFragmentPageAdapter;
  * desc   : 主页面Fragment
  */
 
-public class MainFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
     @Bind(R.id.main_tab)
     TabLayout mainTab;
@@ -37,7 +37,7 @@ public class MainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_main, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, root);
         initData();
         return root;

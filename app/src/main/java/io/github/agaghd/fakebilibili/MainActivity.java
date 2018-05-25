@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import io.github.agaghd.fakebilibili.mainpage.MainFragment;
 import io.github.agaghd.fakebilibili.utils.Constants;
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener {
@@ -42,7 +41,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
         backpressedTime = 0;
         //// TODO: 2018/5/18 测试碎片事务
         mainFragment = new MainFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.main_fl, mainFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_fl, mainFragment).commit();
     }
 
     @Override

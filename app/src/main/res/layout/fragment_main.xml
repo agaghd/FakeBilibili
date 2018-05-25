@@ -1,111 +1,27 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGroundColor"
-    android:fitsSystemWindows="true"
-    tools:context="io.github.agaghd.fakebilibili.mainpage.MainFragment">
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:showDividers="middle">
 
-    <android.support.design.widget.AppBarLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:divider="@drawable/divider"
-        android:showDividers="middle|end">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/mainThemeColor"
-            app:layout_scrollFlags="scroll|enterAlways">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Faker"
-                    android:textColor="@android:color/white"
-                    android:textSize="32sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:src="@mipmap/ic_launcher" />
-            </RelativeLayout>
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/main_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/common_tab_height"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal"
-            android:background="@android:color/transparent"
-            app:tabIndicatorColor="@color/mainThemeColor"
-            app:tabPaddingEnd="@dimen/common_padding_screen"
-            app:tabPaddingStart="@dimen/common_padding_screen"
-            app:tabSelectedTextColor="@color/mainThemeColor"
-            app:tabTextColor="@color/commonTextColor">
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_fragment_tab_live" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_fragment_tab_haokangde" />
-
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/main_fragment_tab_bangumi" />
-
-
-        </android.support.design.widget.TabLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/main_view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:background="@color/halfTransBlack">
-
-    </android.support.v4.view.ViewPager>
-
-    <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/common_action_bar_height"
-        android:layout_gravity="bottom"
-        android:background="@color/halfTransBlack"
-        app:layout_scrollFlags="scroll|enterAlways">
-
-    </android.support.design.widget.TabLayout>
+    </FrameLayout>
 
     <RadioGroup
+        android:id="@+id/main_rg"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_action_bar_height"
         android:layout_gravity="bottom"
         android:background="@android:color/white"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_scrollFlags="scroll|enterAlways">
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/home_rb"
@@ -159,4 +75,5 @@
 
     </RadioGroup>
 
-</android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

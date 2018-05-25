@@ -1,4 +1,4 @@
-package io.github.agaghd.fakebilibili.mainpage;
+package io.github.agaghd.fakebilibili.homepage;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
