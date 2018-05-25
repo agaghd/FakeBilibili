@@ -105,7 +105,7 @@ public class HaoKangDeFragment extends Fragment {
     }
 
     private void loadData(final boolean isRefresh) {
-        if (haokangdeSwipe.isRefreshing()) {
+        if (!isRefresh && haokangdeSwipe.isRefreshing()) {
             return;
         }
         Toast.makeText(getActivity(), "load", Toast.LENGTH_SHORT).show();
