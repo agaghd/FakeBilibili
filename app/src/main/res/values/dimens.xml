@@ -3,7 +3,7 @@
     <dimen name="common_padding_screen">12dp</dimen>
     <dimen name="common_padding_screen_half">6dp</dimen>
     <dimen name="common_padding_top">8dp</dimen>
-    <dimen name="common_card_radius">8dp</dimen>
+    <dimen name="common_card_radius">4dp</dimen>
     <dimen name="common_action_bar_height">48dp</dimen>
     <dimen name="common_tab_height">40dp</dimen>
     <dimen name="common_item_height">48dp</dimen>

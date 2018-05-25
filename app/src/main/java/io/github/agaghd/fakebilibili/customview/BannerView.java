@@ -1,6 +1,7 @@
 package io.github.agaghd.fakebilibili.customview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
@@ -25,6 +26,7 @@ import java.lang.ref.WeakReference;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.github.agaghd.fakebilibili.R;
+import io.github.agaghd.fakebilibili.webviews.CommonWebActivity;
 
 /**
  * author : wjy
@@ -98,12 +100,14 @@ public class BannerView extends FrameLayout {
             if (jsonData != null) {
                 String image = jsonData.optString("image");
                 Glide.with(this.getContext()).load(image).centerCrop().into(bannerIvs[i]);
-                String uri = jsonData.optString("uri");
+                final String uri = jsonData.optString("uri");
                 bannerIvs[i].setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // TODO: 2018/5/24 前往网页地址
-
+                        // TODO: 2018/5/25 做区分处理，广告前往web页面，其他要用app内部页面去打开
+                        Intent intent = new Intent(getContext(), CommonWebActivity.class);
+                        intent.putExtra("uri", uri);
+                        getContext().startActivity(intent);
                     }
                 });
             }

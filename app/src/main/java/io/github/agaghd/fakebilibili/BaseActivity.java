@@ -70,9 +70,9 @@ public class BaseActivity extends AppCompatActivity {
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
             decorView.addView(statusView);
             // 设置根布局的参数
-            ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
-            rootView.setFitsSystemWindows(false);
-            rootView.setClipToPadding(true);
+//            ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+//            rootView.setFitsSystemWindows(false);
+//            rootView.setClipToPadding(true);
         }
     }
 }
