@@ -3,7 +3,6 @@ package io.github.agaghd.fakebilibili;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,7 @@ import io.github.agaghd.fakebilibili.homepage.HomeFragment;
  * desc   : 主页
  */
 
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
 
     @Bind(R.id.fragment_container)
     FrameLayout fragmentContainer;
@@ -42,6 +41,7 @@ public class MainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
         setUpListeners();
@@ -57,23 +57,23 @@ public class MainFragment extends Fragment {
                 switch (checkedId) {
                     case R.id.home_rb: {
                         // TODO: 2018/5/25 首页
-                        Toast.makeText(getActivity(), "首页", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "首页", Toast.LENGTH_SHORT).show();
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
                         break;
                     }
                     case R.id.category_rb: {
                         // TODO: 2018/5/25 分区
-                        Toast.makeText(getActivity(), "分区", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "分区", Toast.LENGTH_SHORT).show();
                         break;
                     }
                     case R.id.following_rb: {
                         // TODO: 2018/5/25 动态
-                        Toast.makeText(getActivity(), "动态", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "动态", Toast.LENGTH_SHORT).show();
                         break;
                     }
                     case R.id.mall_rb: {
                         // TODO: 2018/5/25 会员购
-                        Toast.makeText(getActivity(), "会员购", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "会员购", Toast.LENGTH_SHORT).show();
                         break;
                     }
                     default: {

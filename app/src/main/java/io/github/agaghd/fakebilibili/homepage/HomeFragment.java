@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
         switch (view.getId()) {
             case R.id.drawer_ic:
             case R.id.avatar_ic: {
-                ((MainActivity) getActivity()).getMainDrawer().openDrawer(Gravity.LEFT);
+                ((MainActivity) getActivity()).getMainDrawer().openDrawer(Gravity.START);
                 break;
             }
             default: {
