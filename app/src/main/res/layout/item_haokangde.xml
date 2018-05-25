@@ -24,6 +24,11 @@
             android:src="@drawable/ic_load_data"
             tools:background="@android:color/white" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_card_img_height"
+            android:background="@drawable/music_bg_menu_mask_common" />
+
         <TextView
             android:id="@+id/play_times_tv"
             android:layout_width="wrap_content"
