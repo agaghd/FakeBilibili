@@ -98,5 +98,65 @@
 
     </android.support.design.widget.TabLayout>
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_action_bar_height"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <RadioButton
+            android:id="@+id/home_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/ic_home_selector"
+            android:gravity="center"
+            android:text="@string/main_bottom_tab_home"
+            android:textColor="@drawable/selector_text_color_main_tab_bottom"
+            android:textSize="@dimen/common_textsize_24px" />
+
+        <RadioButton
+            android:id="@+id/category_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_category_selecor"
+            android:gravity="center"
+            android:text="@string/main_bottom_tab_category"
+            android:textColor="@drawable/selector_text_color_main_tab_bottom"
+            android:textSize="@dimen/common_textsize_24px" />
+
+        <RadioButton
+            android:id="@+id/following_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_following_selector"
+            android:gravity="center"
+            android:text="@string/main_bottom_tab_following"
+            android:textColor="@drawable/selector_text_color_main_tab_bottom"
+            android:textSize="@dimen/common_textsize_24px" />
+
+
+        <RadioButton
+            android:id="@+id/mall_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_mall_selector"
+            android:gravity="center"
+            android:text="@string/main_bottom_tab_mall"
+            android:textColor="@drawable/selector_text_color_main_tab_bottom"
+            android:textSize="@dimen/common_textsize_24px" />
+
+    </RadioGroup>
 
 </android.support.design.widget.CoordinatorLayout>

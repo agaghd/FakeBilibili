@@ -23,6 +23,10 @@
     <string name="main_fragment_tab_live">直播</string>
     <string name="main_fragment_tab_haokangde">推荐</string>
     <string name="main_fragment_tab_bangumi">追番</string>
+    <string name="main_bottom_tab_home">首页</string>
+    <string name="main_bottom_tab_category">分区</string>
+    <string name="main_bottom_tab_following">动态</string>
+    <string name="main_bottom_tab_mall">会员购</string>
 
     <!--好康的-->
     <string name="comprehensive">综合</string>
