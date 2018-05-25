@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/backGroundColor"
     android:fitsSystemWindows="true"
-    tools:context="io.github.agaghd.fakebilibili.homepage.HomeFragment">
+    tools:context="io.github.agaghd.fakebilibili.homepage.HomeFragment"
+    tools:ignore="ContentDescription">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,9 +26,21 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/drawer_ic"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_drawer_home" />
+
+                <ImageView
+                    android:id="@+id/avatar_ic"
+                    android:layout_width="@dimen/common_action_bar_height"
+                    android:layout_height="@dimen/common_action_bar_height"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/common_padding_screen_half"
+                    android:layout_toEndOf="@id/drawer_ic"
+                    android:src="@drawable/bili_default_avatar" />
 
                 <TextView
                     android:layout_width="wrap_content"

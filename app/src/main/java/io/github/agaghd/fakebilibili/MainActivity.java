@@ -2,6 +2,7 @@ package io.github.agaghd.fakebilibili;
 
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -18,6 +19,9 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
     ImageView biliDrawerbgLogin;
     @Bind(R.id.main_fl)
     FrameLayout mainFl;
+
+    @Bind(R.id.main_drawer)
+    DrawerLayout mainDrawer;
 
     private long backpressedTime;
     private Point touchDownPoint;
@@ -95,5 +99,9 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener {
             }
         }
         return true;
+    }
+
+    public DrawerLayout getMainDrawer() {
+        return mainDrawer;
     }
 }

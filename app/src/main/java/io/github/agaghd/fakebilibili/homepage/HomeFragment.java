@@ -5,9 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import io.github.agaghd.fakebilibili.MainActivity;
 import io.github.agaghd.fakebilibili.R;
 import io.github.agaghd.fakebilibili.adapters.MyFragmentPageAdapter;
 
@@ -30,6 +34,10 @@ public class HomeFragment extends Fragment {
     TabLayout mainTab;
     @Bind(R.id.main_view_pager)
     ViewPager mainViewPager;
+    @Bind(R.id.drawer_ic)
+    ImageView drawerIc;
+    @Bind(R.id.avatar_ic)
+    ImageView avatarIc;
 
     private List<Fragment> fragmentList;
     private MyFragmentPageAdapter myFragmentPageAdapter;
@@ -85,5 +93,19 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @OnClick({R.id.drawer_ic, R.id.avatar_ic})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.drawer_ic:
+            case R.id.avatar_ic: {
+                ((MainActivity) getActivity()).getMainDrawer().openDrawer(Gravity.LEFT);
+                break;
+            }
+            default: {
+                break;
+            }
+        }
     }
 }

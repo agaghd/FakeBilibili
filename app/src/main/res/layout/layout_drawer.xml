@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/common_drawer_width"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="start"
     android:background="@color/backGroundColor"
     android:orientation="vertical"
@@ -32,8 +32,8 @@
                     android:layout_height="@dimen/common_portraint_size"
                     android:layout_marginStart="@dimen/common_padding_screen"
                     android:layout_marginTop="@dimen/common_padding_screen"
-                    android:src="@drawable/music_portrait_placeholder"
-                    tools:src="@drawable/bangumi_sponsor_result_ic_portrait_33" />
+                    android:src="@drawable/bili_default_avatar"
+                    tools:src="@drawable/bili_default_avatar" />
 
                 <ImageView
                     android:id="@+id/bili_drawerbg_login"
@@ -74,8 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:selectedDrawable="@mipmap/ic_launcher"
-                    app:unSelectedDrawable="@drawable/arrow_left"
                     app:selectedTextColor="@color/mainThemeColor"
+                    app:unSelectedDrawable="@drawable/arrow_left"
                     app:unSelectedTextColor="@color/commonTextColor">
 
                 </io.github.agaghd.fakebilibili.customview.DrawerItemView>
