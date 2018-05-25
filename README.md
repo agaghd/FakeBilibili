@@ -8,4 +8,4 @@
 [V0.0.1](https://github.com/agaghd/FakeBilibili/releases)
 
 # 预览图
-![首页](https://user-images.githubusercontent.com/16527638/40528031-df38ae5a-6021-11e8-842d-7fd470609e2a.png)
+![首页](https://user-images.githubusercontent.com/16527638/40528823-cb96cdfc-6024-11e8-93d9-e8676e8a8c6e.png)
